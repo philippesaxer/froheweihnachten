@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Für Gotte Andrea</title>
+    <title>Für Götti Bruno</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Roboto:wght@400&display=swap');
 
@@ -121,7 +121,7 @@
         <canvas id="canvas" width="400" height="600"></canvas>
 
         <div id="start-screen" class="overlay">
-            <h1>Frohe Weihnachten<br>Gotte Andrea!</h1>
+            <h1>Frohe Weihnachten<br>Götti Bruno!</h1>
             <p style="font-size: 16px; margin-top: 10px; opacity: 0.9;">(Leertaste oder Klick zum Fliegen)</p>
             <button onclick="game.start()">Starten</button>
         </div>
@@ -140,16 +140,16 @@
             speed: 2.5,
             pipeSpawnRate: 140, 
             pipeGap: 210,
-            andreaSize: 67
+            BrunoSize: 67
         };
 
-        const andreaImage = new Image();
+        const BrunoImage = new Image();
         let imageLoaded = false;
         
-        andreaImage.src = 'bruno.png'; 
+        BrunoImage.src = 'bruno.png'; 
         
-        andreaImage.onload = () => { imageLoaded = true; };
-        andreaImage.onerror = () => { 
+        BrunoImage.onload = () => { imageLoaded = true; };
+        BrunoImage.onerror = () => { 
             console.log("Bild nicht gefunden.");
             imageLoaded = false; 
         };
@@ -211,7 +211,7 @@
         class Player {
             constructor() {
                 this.reset();
-                this.size = CONFIG.andreaSize;
+                this.size = CONFIG.BrunoSize;
             }
 
             reset() {
@@ -245,7 +245,7 @@
                     ctx.beginPath();
                     ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
                     ctx.clip();
-                    ctx.drawImage(andreaImage, -this.size / 2, -this.size / 2, this.size, this.size);
+                    ctx.drawImage(BrunoImage, -this.size / 2, -this.size / 2, this.size, this.size);
                     ctx.strokeStyle = "red";
                     ctx.lineWidth = 2;
                     ctx.stroke();
